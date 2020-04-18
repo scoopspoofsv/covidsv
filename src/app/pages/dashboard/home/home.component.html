@@ -1,1 +1,68 @@
-<p>home works!</p>
+<main class="container">
+    <section>
+        <ng-container *ngIf="worldStats$ | async as worldStats;else quickStatsLoading">
+            <section class="quick-stats" fxLayout="column wrap">
+                <div class="section__heading" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                    <h3>World Stats</h3>
+                    <span></span>
+                </div>
+                <div class="section__container" fxLayout="row wrap">
+                    <div class="quick-stats__item" *ngFor="let item of worldStats">
+                        <app-quick-stats [data]="item"></app-quick-stats>
+                    </div>
+                </div>
+            </section>
+        </ng-container>
+        <!-- <ng-container *ngIf="totalStats$ | async as totalStats;else quickStatsLoading">
+            <section class="quick-stats" fxLayout="column wrap">
+                <div class="section__heading" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                    <h3>India Stats</h3>
+                    <span></span>
+                </div>
+                <div class="section__container" fxLayout="row wrap">
+                    <div class="quick-stats__item" *ngFor="let item of totalStats">
+                        <app-quick-stats [data]="item"></app-quick-stats>
+                    </div>
+                </div>
+            </section>
+        </ng-container> -->
+
+        <ng-template #quickStatsLoading>
+            <p>Data Loading</p>
+        </ng-template>
+    </section>
+    <ng-container *ngIf="contactInfo$| async as contactInfo">
+        <section class="contact-section">
+            <div class="section__heading" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                <h3>Contacts</h3>
+                <span></span>
+            </div>
+            <div class="contact-info">
+                <app-contact-info [data]="contactInfo"></app-contact-info>
+            </div>
+        </section>
+    </ng-container>
+    <section class="state-info">
+        <div class="section__heading" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+            <h3>Indian stats : State Wise</h3>
+            <span></span>
+        </div>
+        <div class="state-info__search" fxLayoutAlign="start center">
+            <div class="search__input" fxFlex="100">
+                <mat-icon svgIcon="search" class="search__icon"></mat-icon>
+                <input type="text" role="searchbox" aria-label="Search" placeholder="Search state" [formControl]="searchTerm" #search id="search">
+                <!-- <button mat-icon-button *ngIf="search.value.length > 0">
+        <mat-icon svgIcon="backspace"></mat-icon>
+      </button> -->
+            </div>
+            <!-- <button mat-flat-button color="primary" class="search__button" fxFlex="20">Search</button> -->
+        </div>
+        <ng-container *ngIf="stateWiseData$ | async as stateWiseData">
+            <div class="state-info__items" *ngFor="let state of stateWiseData">
+                <app-category-card [data]="state"></app-category-card>
+            </div>
+
+        </ng-container>
+    </section>
+
+</main>

@@ -37,7 +37,7 @@ export class HttpService {
         const total = data.statewise[0];
         const delta = data.key_values[0];
         const deltaMap = new Map([
-          ['confirmed', 'confirmeddelta'],
+          ['confirmed', 'totalpositivecases'],
           ['deaths', 'deceaseddelta'],
           ['recovered', 'recovereddelta']
         ]);
