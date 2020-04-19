@@ -24,7 +24,7 @@ const routes: Routes = [
           import("./settings/settings.module").then((m) => m.SettingsModule),
       },
       {
-        path: "state-detail",
+        path: "view/:state",
         loadChildren: () =>
           import("./state-detail/state-detail.module").then(
             (m) => m.StateDetailModule

@@ -18,11 +18,11 @@ export class HeaderComponent implements OnInit {
   toggleTheme() {
     this.isDarkMode = !this.isDarkMode;
     localStorage.setItem('darkmode', JSON.stringify(this.isDarkMode));
-    document.documentElement.style.setProperty('--background', this.isDarkMode ? '#0a0e1d' : '#fff');
+    document.documentElement.style.setProperty('--background', this.isDarkMode ? '#101313' : '#fff');
     document.documentElement.style.setProperty('--text-primary', this.isDarkMode ? '#fff' : '#000');
-    document.documentElement.style.setProperty('--background-light', this.isDarkMode ? '#0a122d' : '#fff');
+    document.documentElement.style.setProperty('--background-light', this.isDarkMode ? '#1A0B04' : '#fff');
     document.documentElement.style.setProperty('--text-light', this.isDarkMode ? '#c5c5c5' : '#444');
-    document.documentElement.style.setProperty('--accent', this.isDarkMode ? '#06a4a6' : '#0c7a93');
+    document.documentElement.style.setProperty('--accent', this.isDarkMode ? '#FB7F7D' : '#C72A28');
   }
 
 }

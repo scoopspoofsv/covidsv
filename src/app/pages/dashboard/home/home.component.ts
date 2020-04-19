@@ -4,6 +4,9 @@ import { SubSink } from "subsink";
 import { HttpService } from "../../../common/services/http.service";
 import { debounceTime, tap, map } from "rxjs/operators";
 
+import { Observable } from 'rxjs';
+import { NewsData } from '../../../common/interfaces/news.interface';
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -15,6 +18,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   contactInfo$;
   worldStats$;
   searchTerm: FormControl;
+  news$: Observable<NewsData>;
+
   private subs = new SubSink();
   constructor(private httpService: HttpService) {}
 
@@ -34,6 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     );
     this.getPrimaryContactDetails();
     this.listenToSearchInputAndFilterData();
+    this.news$ = this.httpService.getNews();
   }
 
   ngOnDestroy(): void {

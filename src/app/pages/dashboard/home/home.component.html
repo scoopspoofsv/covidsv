@@ -1,4 +1,4 @@
-<main class="container">
+<main class="container" fxLayout="column">
     <section>
         <ng-container *ngIf="worldStats$ | async as worldStats;else quickStatsLoading">
             <section class="quick-stats" fxLayout="column wrap">
@@ -42,27 +42,56 @@
             </div>
         </section>
     </ng-container>
-    <section class="state-info">
-        <div class="section__heading" fxLayout="row nowrap" fxLayoutAlign="space-between center">
-            <h3>Indian stats : State Wise</h3>
-            <span></span>
-        </div>
-        <div class="state-info__search" fxLayoutAlign="start center">
-            <div class="search__input" fxFlex="100">
-                <mat-icon svgIcon="search" class="search__icon"></mat-icon>
-                <input type="text" role="searchbox" aria-label="Search" placeholder="Search state" [formControl]="searchTerm" #search id="search">
-                <!-- <button mat-icon-button *ngIf="search.value.length > 0">
+
+    <article class="state-and-news" fxLayout="row nowrap" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="16px" fxLayoutAlign="space-between center">
+        <section class="state-info">
+            <div class="section__heading" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                <h3>Indian stats : By State</h3>
+                <span></span>
+            </div>
+            <div class="state-info__search" fxLayoutAlign="start center">
+                <div class="search__input" fxFlex="99">
+                    <mat-icon svgIcon="search" class="search__icon"></mat-icon>
+                    <input type="text" role="searchbox" aria-label="Search" placeholder="Search state" [formControl]="searchTerm" #search id="search">
+                    <!-- <button mat-icon-button *ngIf="search.value.length > 0">
         <mat-icon svgIcon="backspace"></mat-icon>
       </button> -->
+                </div>
+                <!-- <button mat-flat-button color="primary" class="search__button" fxFlex="20">Search</button> -->
             </div>
-            <!-- <button mat-flat-button color="primary" class="search__button" fxFlex="20">Search</button> -->
-        </div>
-        <ng-container *ngIf="stateWiseData$ | async as stateWiseData">
-            <div class="state-info__items" *ngFor="let state of stateWiseData">
-                <app-category-card [data]="state"></app-category-card>
+            <ng-container *ngIf="stateWiseData$ | async as stateWiseData" class="state-info__state-items-container">
+                <div class="state-info__items" *ngFor="let state of stateWiseData">
+                    <app-category-card [data]="state"></app-category-card>
+                </div>
+
+            </ng-container>
+        </section>
+        <section class="news">
+            <div class="section__heading" fxLayout="row nowrap" fxLayoutAlign="space-between center">
+                <h3>World News</h3>
+                <span></span>
             </div>
+            <ng-container *ngIf="news$ | async as news; else loading">
+                <app-new-item *ngFor="let item of news.articles" [news]="item"></app-new-item>
+            </ng-container>
 
-        </ng-container>
-    </section>
-
+            <ng-template #loading>
+                <div class="news-loading" fxLayout="column" fxLayoutGap="16px">
+                    <span class="news-loading__header"></span>
+                    <span class="news-loading__body"></span>
+                    <span class="news-loading__footer"></span>
+                </div>
+                <div class="news-loading" fxLayout="column" fxLayoutGap="16px">
+                    <span class="news-loading__header"></span>
+                    <span class="news-loading__body"></span>
+                    <span class="news-loading__footer"></span>
+                </div>
+                <div class="news-loading" fxLayout="column" fxLayoutGap="16px">
+                    <span class="news-loading__header"></span>
+                    <span class="news-loading__body"></span>
+                    <span class="news-loading__footer"></span>
+                </div>
+            </ng-template>
+        </section>
+    </article>
 </main>
