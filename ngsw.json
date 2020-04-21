@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1587370982325,
+  "timestamp": 1587477967308,
   "index": "https://scoopspoofsv.github.io/covidsv19/index.html",
   "assetGroups": [
     {
@@ -26,8 +26,8 @@
         "https://scoopspoofsv.github.io/covidsv19/9-es5.77eff48687c6198c78f8.js",
         "https://scoopspoofsv.github.io/covidsv19/favicon.ico",
         "https://scoopspoofsv.github.io/covidsv19/index.html",
-        "https://scoopspoofsv.github.io/covidsv19/main-es2015.14b5c296754b550a5d82.js",
-        "https://scoopspoofsv.github.io/covidsv19/main-es5.14b5c296754b550a5d82.js",
+        "https://scoopspoofsv.github.io/covidsv19/main-es2015.c1f74758c3ce2435820c.js",
+        "https://scoopspoofsv.github.io/covidsv19/main-es5.c1f74758c3ce2435820c.js",
         "https://scoopspoofsv.github.io/covidsv19/manifest.webmanifest",
         "https://scoopspoofsv.github.io/covidsv19/polyfills-es2015.d52bcb32ac021760e289.js",
         "https://scoopspoofsv.github.io/covidsv19/polyfills-es5.32a18724cb2f458cc40b.js",
@@ -249,9 +249,9 @@
     "https://scoopspoofsv.github.io/covidsv19/assets/images/virus.png": "b66eb57020d930a8af61ee8c6e5e248800a1a773",
     "https://scoopspoofsv.github.io/covidsv19/assets/images/virus.svg": "8e8985516df8795eea74628a2c8797108e3600a1",
     "https://scoopspoofsv.github.io/covidsv19/favicon.ico": "00dc52443eef20a3722bf66b02f31d9a1a6ab685",
-    "https://scoopspoofsv.github.io/covidsv19/index.html": "d849dba16df38ac2169e9748c2141e8586f3e312",
-    "https://scoopspoofsv.github.io/covidsv19/main-es2015.14b5c296754b550a5d82.js": "4cee993807e3b314a60ea5fd8c97d15a08caafdc",
-    "https://scoopspoofsv.github.io/covidsv19/main-es5.14b5c296754b550a5d82.js": "eb1287e64dea17fd7fccc5293c19d24347f05897",
+    "https://scoopspoofsv.github.io/covidsv19/index.html": "691053866aa2c5b61e73e45592488799b3475d2f",
+    "https://scoopspoofsv.github.io/covidsv19/main-es2015.c1f74758c3ce2435820c.js": "d859b64f11b7559783fcd1ee8f43cac502b4d07b",
+    "https://scoopspoofsv.github.io/covidsv19/main-es5.c1f74758c3ce2435820c.js": "c9e3e2c63667b66925eb23c00f61220d6507afae",
     "https://scoopspoofsv.github.io/covidsv19/manifest.webmanifest": "e419fb2175774fe1747945c4269c34976c1f728c",
     "https://scoopspoofsv.github.io/covidsv19/polyfills-es2015.d52bcb32ac021760e289.js": "15a133b6cbb459a66fcd2e75f6aa25782e5d79c4",
     "https://scoopspoofsv.github.io/covidsv19/polyfills-es5.32a18724cb2f458cc40b.js": "2930db992c38f1532f6d1c90b4172445fd6d7792",
